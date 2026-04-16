@@ -27,7 +27,7 @@ biolink/
 
 ⚙️ Como Executar o Projeto
 Clone o repositório:
-git clone https://github.com/SEU-USUARIO/BioLink.git
+git clone https://github.com/luck7wz/BioLink.git
 Acesse a pasta:
 cd BioLink
 Instale as dependências:
