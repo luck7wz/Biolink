@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Usuário | Biolink</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Editar Usuário</h1>
+    <form method="POST">
+      <label>Nome:</label>
+      <input type="text" name="nome" value="{{ usuario.nome }}" required><br>
+
+      <label>Telefone:</label>
+      <input type="text" name="telefone" value="{{ usuario.telefone }}" required><br>
+
+      <label>Email:</label>
+      <input type="email" name="email" value="{{ usuario.email }}" required><br>
+
+      <label>Cidade:</label>
+      <input type="text" name="cidade" value="{{ usuario.cidade }}" required><br>
+
+      <label>Tipo Sanguíneo:</label>
+      <input type="text" name="tipo_sanguineo" value="{{ usuario.tipo_sanguineo }}" required><br>
+
+      <button type="submit" class="botao-salvar">Salvar</button>
+      <a href="{{ url_for('usuarios') }}" class="botao-cancelar">Cancelar</a>
+    </form>
+  </div>
+</body>
+</html>

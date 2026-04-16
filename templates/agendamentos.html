@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamentos - Biolink</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <div class="topo">
+      <img src="{{ url_for('static', filename='imagens/logo.png') }}" alt="Logo Biolink" class="logo">
+      <nav>
+        <a href="{{ url_for('index') }}">Início</a>
+        <a href="{{ url_for('agendar') }}">Novo Agendamento</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="secao">
+    <div class="container">
+      <h2>Lista de Agendamentos</h2>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <p style="color: #b30000;"><strong>{{ messages[0] }}</strong></p>
+        {% endif %}
+      {% endwith %}
+
+      {% if agendamentos %}
+      <table border="1" cellpadding="10" cellspacing="0" style="width:100%; border-color:#b30000;">
+        <thead>
+          <tr style="background-color:#b30000; color:white;">
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Local</th>
+            <th>Data</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for ag in agendamentos %}
+          <tr>
+            <td>{{ ag.id }}</td>
+            <td>{{ ag.nome }}</td>
+            <td>{{ ag.email }}</td>
+            <td>{{ ag.local }}</td>
+            <td>{{ ag.data }}</td>
+            <td>
+              <a href="{{ url_for('editar', id=ag.id) }}" style="color:blue;">Editar</a> |
+              <a href="{{ url_for('deletar', id=ag.id) }}" style="color:red;" onclick="return confirm('Deseja excluir?')">Excluir</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+        <p>Nenhum agendamento encontrado.</p>
+      {% endif %}
+    </div>
+  </section>
+
+  <footer>
+    <p>Biolink © 2025</p>
+  </footer>
+</body>
+</html>

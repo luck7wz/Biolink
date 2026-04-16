@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locais para Doar Sangue</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f5;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #b30000;
+            text-align: center;
+        }
+
+        .cidade {
+            margin: 30px 0;
+        }
+
+        .hospital {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+            margin: 15px 0;
+            padding: 20px;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            color: #b30000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Locais próximos onde você pode doar sangue 🩸</h1>
+
+    <div class="cidade">
+        <h2>Recife</h2>
+        <div class="hospital">
+            <h3>Hospital Sangue</h3>
+            <p>Rua das Flores, 120 - Boa Vista</p>
+            <p>Horário: 8h às 16h</p>
+            <p>Telefone: (81) 3300-1010</p>
+        </div>
+        <div class="hospital">
+            <h3>Fraternidade Sangue</h3>
+            <p>Av. Rui Barbosa, 800 - Graças</p>
+            <p>Horário: 7h às 17h</p>
+            <p>Telefone: (81) 3311-2200</p>
+        </div>
+        <div class="hospital">
+            <h3>Bem com o Sangue</h3>
+            <p>Rua da Paz, 55 - Espinheiro</p>
+            <p>Horário: 9h às 18h</p>
+            <p>Telefone: (81) 3122-9090</p>
+        </div>
+    </div>
+
+    <div class="cidade">
+        <h2>Caruaru</h2>
+        <div class="hospital">
+            <h3>Gonzaga Sangue</h3>
+            <p>Av. Agamenon Magalhães, 300</p>
+            <p>Horário: 8h às 17h</p>
+            <p>Telefone: (81) 3722-4550</p>
+        </div>
+        <div class="hospital">
+            <h3>Forró do Sangue</h3>
+            <p>Rua São João, 210 - Maurício de Nassau</p>
+            <p>Horário: 9h às 15h</p>
+            <p>Telefone: (81) 3701-9999</p>
+        </div>
+        <div class="hospital">
+            <h3>Arraiá do Sangue</h3>
+            <p>Av. Brasil, 450 - Rendeiras</p>
+            <p>Horário: 7h às 13h</p>
+            <p>Telefone: (81) 3799-1001</p>
+        </div>
+    </div>
+
+    <div class="cidade">
+        <h2>Serra Talhada</h2>
+        <div class="hospital">
+            <h3>Hospital Luiz</h3>
+            <p>Rua Central, 200 - Centro</p>
+            <p>Horário: 8h às 16h</p>
+            <p>Telefone: (87) 3831-1111</p>
+        </div>
+        <div class="hospital">
+            <h3>Leve Sangue</h3>
+            <p>Av. Miguel Nunes, 80 - AABB</p>
+            <p>Horário: 9h às 17h</p>
+            <p>Telefone: (87) 3832-7777</p>
+        </div>
+        <div class="hospital">
+            <h3>Liberdade Sangue</h3>
+            <p>Rua da Liberdade, 40 - Ipsep</p>
+            <p>Horário: 10h às 18h</p>
+            <p>Telefone: (87) 3833-4040</p>
+        </div>
+    </div>
+
+    <a href="{{ url_for('escolha') }}">⬅ Voltar à página de escolha</a>
+</body>
+</html>

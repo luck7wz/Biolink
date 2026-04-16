@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biolink - Início</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+  <header>
+    <div class="topo">
+      <img src="{{ url_for('static', filename='imagens/logo.png') }}" alt="Logo Biolink" class="logo">
+      <nav>
+        <a href="{{ url_for('index') }}">Início</a>
+        <a href="{{ url_for('sobre') }}">Sobre</a>
+        <a href="{{ url_for('locais') }}">Locais</a>
+        <a href="{{ url_for('agendar') }}">Agendar</a>
+        <a href="{{ url_for('contato') }}">Contato</a>
+        <a href="{{ url_for('registrar') }}" class="botao">Registrar</a>
+      </nav>
+    </div>
+
+  </header>
+
+   <section class="inicio">
+    <div class="container">
+      <h1>Doe sangue, espalhe amor ❤️</h1>
+      <p>Um simples gesto pode salvar muitas vidas. Faça parte dessa corrente do bem.</p>
+
+      <br>
+
+      <a href="{{ url_for('agendar') }}" class="botao">Agendar Doação</a>
+    </div>
+  </section>
+
+  <section class="secao">
+    <div class="container">
+      <h2>Conectando pessoas e esperança</h2>
+      <p>O Biolink ajuda a unir doadores a locais de coleta de forma rápida e simples. 
+      Nossa missão é facilitar o ato de doar e tornar o processo mais humano e acessível.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Biolink © 2025</p>
+  </footer>
+</body>
+</html>

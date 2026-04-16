@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Locais de Coleta - Biolink</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <div class="topo">
+      <img src="{{ url_for('static', filename='imagens/logo.png') }}" alt="Logo Biolink" class="logo">
+      <nav>
+        <a href="{{ url_for('index') }}">Início</a>
+        <a href="{{ url_for('agendar') }}">Agendar</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="secao">
+    <div class="container">
+      <h2>Locais de Coleta</h2>
+      <ul style="list-style:none; padding:0;">
+
+        <br>
+        
+        <h2>Recife</h2>
+<ul>
+  <li><strong>Hospital de Câncer de Pernambuco (HCP)</strong> – (81) 3217-8000 <br>
+  Av. Cruz Cabugá, 1597 – Santo Amaro, Recife – PE</li>
+</ul>
+
+<h2>Olinda</h2>
+<ul>
+  <li><strong>Hospital do Tricentenário</strong> – (81) 3429-2297 <br>
+    Rua Dr. Farias Neves Sobrinho, 232 – Bairro Novo, Olinda – PE</li>
+</ul>
+
+<h2>Caruaru</h2>
+<ul>
+  <li><strong>Hospital Mestre Vitalino</strong> – (81) 3725-7750 <br>
+  BR-104, Km 64 – Bairro Luiz Gonzaga, Caruaru – PE</li>
+</ul>
+
+
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>Biolink © 2025</p>
+  </footer>
+</body>
+</html>

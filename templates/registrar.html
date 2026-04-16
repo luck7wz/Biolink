@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar Usuário | Biolink</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    body {
+      background: #f9f9f9;
+      font-family: "Poppins", sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .topo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px 30px;
+    }
+
+    .logo {
+      height: 80px;
+      width: auto;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #444;
+      font-weight: 600;
+      margin-left: 20px;
+      transition: color 0.3s, border-bottom 0.3s;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav a:hover {
+      color: #b71c1c;
+      border-bottom: 2px solid #b71c1c;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 80px auto;
+      background: #fff;
+      padding: 40px 50px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      color: #b71c1c;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: 600;
+      color: #333;
+    }
+
+    input, select {
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    input:focus, select:focus {
+      border-color: #d32f2f;
+      box-shadow: 0 0 0 2px rgba(211,47,47,0.2);
+      outline: none;
+    }
+
+    .botao {
+      background: #d32f2f;
+      color: #fff;
+      border: none;
+      padding: 12px 0;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .botao:hover {
+      background: #b71c1c;
+      transform: translateY(-2px);
+    }
+
+    .voltar {
+      display: block;
+      text-align: center;
+      margin-top: 25px;
+      color: #d32f2f;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .voltar:hover {
+      color: #b71c1c;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 20px 0;
+      background: #b71c1c;
+      color: #fff;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 40px 20px;
+        padding: 30px 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="topo">
+      <img src="{{ url_for('static', filename='imagens/logo.png') }}" alt="Logo Biolink" class="logo">
+      <nav>
+        <a href="{{ url_for('index') }}">Início</a>
+        <a href="{{ url_for('sobre') }}">Sobre</a>
+        <a href="{{ url_for('locais') }}">Locais</a>
+        <a href="{{ url_for('agendar') }}">Agendar</a>
+        <a href="{{ url_for('contato') }}">Contato</a>
+        <a href="{{ url_for('registrar') }}" class="ativo">Registrar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1>Registrar Usuário</h1>
+
+      <form action="{{ url_for('registrar') }}" method="post">
+        <label>Nome:</label>
+        <input type="text" name="nomeForm" required>
+
+        <label>Telefone:</label>
+        <input type="text" name="telefoneForm" required>
+
+        <label>Email:</label>
+        <input type="email" name="emailForm" required>
+
+        <label>Endereço:</label>
+        <input type="text" name="enderecoForm" required>
+
+        <label>Data de Nascimento:</label>
+        <input type="date" id="data" name="dataDeNascimentoForm" required>
+
+        <label for="tiposanguineoform">Tipo Sanguineo:</label>
+        <select id="tiposanguineoform" name="tiposanguineoform">
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <option value="Não sei">Não sei.</option>
+        </select>
+        
+
+        <label>Senha:</label>
+        <input type="password" name="senhaForm" required>
+
+
+        <label for="cidade">Escolha sua cidade:</label>
+        <select id="cidade" name="cidade">
+          <option value="Recife">Recife</option>
+          <option value="Caruaru">Caruaru</option>
+          <option value="Olinda">Olinda</option>
+        </select>
+
+        <button type="submit" class="botao">Registrar</button>
+      </form>
+
+      <a href="{{ url_for('index') }}" class="voltar">← Voltar ao Início</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>Biolink © 2025 — Promovendo saúde e solidariedade</p>
+  </footer>
+
+</body>
+</html>

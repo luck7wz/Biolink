@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Agendamento - Biolink</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <div class="topo">
+      <img src="{{ url_for('static', filename='imagens/logo.png') }}" alt="Logo Biolink" class="logo">
+      <nav>
+        <a href="{{ url_for('agendamentos') }}">Voltar</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="secao">
+    <div class="container">
+      <h2>Editar Agendamento</h2>
+      <form method="POST">
+        <label>Nome:</label>
+        <input type="text" name="nome" value="{{ agendamento.nome }}" required>
+
+        <label>Email:</label>
+        <input type="email" name="email" value="{{ agendamento.email }}" required>
+
+        <label>Local:</label>
+        <input type="text" name="local" value="{{ agendamento.local }}" required>
+
+        <label>Data:</label>
+        <input type="date" name="data" value="{{ agendamento.data }}" required>
+
+        <button type="submit" class="botao">Salvar Alterações</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>Biolink © 2025</p>
+  </footer>
+</body>
+</html>

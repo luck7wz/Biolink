@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendar - Biolink</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+  <header>
+    <div class="topo">
+      <img src="{{ url_for('static', filename='imagens/logo.png') }}" alt="Logo Biolink" class="logo">
+      <nav>
+        <a href="{{ url_for('index') }}">Início</a>
+        <a href="{{ url_for('sobre') }}">Sobre</a>
+        <a href="{{ url_for('locais') }}">Locais</a>
+        <a href="{{ url_for('contato') }}">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="secao">
+    <div class="container">
+      <h2>Agendar Doação</h2>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <p style="color: #b30000;"><strong>{{ messages[0] }}</strong></p>
+        {% endif %}
+      {% endwith %}
+
+      <form method="POST">
+        <label>Nome completo:</label>
+        <input type="text" name="nome" required>
+
+        <label>Email:</label>
+        <input type="email" name="email" required>
+
+        <label>Local de coleta:</label>
+        <select name="local" required>
+          <option value="">Selecione um local</option>
+          <option>Hemope Recife</option>
+          <option>Hospital das Clínicas</option>
+          <option>Santa Casa de Misericórdia</option>
+          <option>Hemocentro Olinda</option>
+        </select>
+
+        <label>Data:</label>
+        <input type="date" id="data" name="data" required>
+
+        <button type="submit" class="botao">Confirmar Agendamento</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>Biolink © 2025</p>
+  </footer>
+</body>
+</html>

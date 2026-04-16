@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospitais com Necessidade de Doação</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff8f8;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #800000;
+            text-align: center;
+        }
+
+        .cidade {
+            margin: 30px 0;
+        }
+
+        .hospital {
+            background-color: white;
+            border-left: 8px solid #b30000;
+            border-radius: 5px;
+            margin: 15px 0;
+            padding: 20px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            color: #b30000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hospitais que estão precisando de doações urgentes ❤️</h1>
+
+    <div class="cidade">
+        <h2>Recife</h2>
+        <div class="hospital">
+            <h3>Hospital Sangue</h3>
+            <p>Tipo de sangue: O-</p>
+            <p>Contato: (81) 3300-1010</p>
+        </div>
+        <div class="hospital">
+            <h3>Bem com o Sangue</h3>
+            <p>Tipo de sangue: A+</p>
+            <p>Contato: (81) 3122-9090</p>
+        </div>
+    </div>
+
+    <div class="cidade">
+        <h2>Caruaru</h2>
+        <div class="hospital">
+            <h3>Arraiá do Sangue</h3>
+            <p>Tipo de sangue: AB-</p>
+            <p>Contato: (81) 3799-1001</p>
+        </div>
+        <div class="hospital">
+            <h3>Forró do Sangue</h3>
+            <p>Tipo de sangue: B+</p>
+            <p>Contato: (81) 3701-9999</p>
+        </div>
+    </div>
+
+    <div class="cidade">
+        <h2>Serra Talhada</h2>
+        <div class="hospital">
+            <h3>Hospital Luiz</h3>
+            <p>Tipo de sangue: O+</p>
+            <p>Contato: (87) 3831-1111</p>
+        </div>
+        <div class="hospital">
+            <h3>Leve Sangue</h3>
+            <p>Tipo de sangue: A-</p>
+            <p>Contato: (87) 3832-7777</p>
+        </div>
+    </div>
+
+    <a href="{{ url_for('escolha') }}">⬅ Voltar à página de escolha</a>
+</body>
+</html>

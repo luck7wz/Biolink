@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usuários Registrados | Biolink</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <div class="topo">
+      <img src="{{ url_for('static', filename='imagens/logo.png') }}" alt="Logo Biolink" class="logo">
+      <nav>
+        <a href="{{ url_for('index') }}">Início</a>
+        <a href="{{ url_for('registrar') }}">Registrar</a>
+        <a href="{{ url_for('usuarios') }}" class="ativo">Usuários</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Usuários Registrados</h1>
+
+    {% if usuarios %}
+      <table border="1" cellpadding="10" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Email</th>
+            <th>Cidade</th>
+            <th>Tipo Sanguíneo</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for user in usuarios %}
+          <tr>
+            <td>{{ user.nome }}</td>
+            <td>{{ user.telefone }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.cidade }}</td>
+            <td>{{ user.tipo_sanguineo }}</td>
+            <td>
+              <a href="{{ url_for('editar_usuario', id=user.id) }}" class="botao-editar">Editar</a>
+
+              <br>
+
+              <a href="{{ url_for('deletar_usuario', id=user.id) }}" class="botao-deletar" onclick="return confirm('Tem certeza que deseja excluir este usuário?')">Excluir</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>Nenhum usuário registrado ainda.</p>
+    {% endif %}
+  </main>
+
+  <footer>
+    <p>Biolink © 2025 — Promovendo saúde e solidariedade</p>
+  </footer>
+</body>
+</html>
